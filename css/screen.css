@@ -2,6 +2,8 @@
 #FONTS
 \*------------------------------------*/
 
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap'); */
+
 /*------------------------------------*\
 #Variables
 \*------------------------------------*/
@@ -25,18 +27,23 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    color: grey;
+    font-family: Inter, sans-serif;
+    color: #20223a;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
+    background-color: #F5F6FA;
 }
 
 *,
 *:before,
 *:after {
     box-sizing: inherit;
+}
+
+input,
+label {
+    display: block;
 }
 
 /*
@@ -47,13 +54,13 @@ html {
 */
 
 ::-moz-selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
 
 ::selection {
-    background: HotPink;
+    background: #3385FF;
     color: white;
     text-shadow: none;
 }
@@ -158,18 +165,18 @@ hr {
 }
 
 a {
-    color: HotPink;
+    color: #3385FF;
     transition: all .1s ease-in-out;
 }
 
 a:visited,
 a:active {
-    color: HotPink;
+    color: #3385FF;
 }
 
 a:hover,
 a:focus {
-    color: DeepPink;
+    color: #3385FF;
 }
 
 /*------------------------------------*\
@@ -189,6 +196,9 @@ a:focus {
 
 .o-row--login {
     /* stuff here to align the card */
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 /* size modifiers */
@@ -432,17 +442,92 @@ a:focus {
     Website main logo
 */
 
+.c-logo {
+    display: flex;
+    justify-content: center;
+    height: 24px;
+}
+
+.c-logo__inner-circle {
+    fill: #3385FF
+}
+.c-logo__outer-circle {
+    fill: #1B4186
+}
+
+.c-logo__text {
+    fill: #20223A
+}
+    
+.c-logo__symbol {
+    height: 100%;
+    display: block;
+}
+
 /*
     Component: Card
     ---
     Card with box shadow
 */
 
+.c-card {
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    border: 1px solid rgba(#000000, 5%);
+    box-shadow: 0 2px 5px 2px rgba(#000000, 7%);
+}
+
+.c-card__body {
+    padding: 0 48px;
+}
+
+.c-card__header {
+    padding: 48px 48px;
+}
+
+.c-card__title {
+    text-align: center;
+    margin-bottom: 0px;
+
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 600;
+}
+
+.c-card__footer {
+    border-top: 1px solid #e2e3e7;
+    padding: 24px 48px;
+    text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+    .c-card__header {
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
+
+    .c-card__body,
+    .c-card__header,
+    .c-card__footer {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
+
 /*
     Component: Forms
     ---
     Everything form related here
 */
+
+.c-form-field {
+
+}
+
+.c-form-field--option {
+    display: flex;
+    align-items: center;
+}
 
 /*
     Component: Input
@@ -451,10 +536,25 @@ a:focus {
 */
 
 .c-input {
-
+    /* all: unset; */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-color: #e2e3e7;
+    border-width: 1px;
+    border-radius: 3px;
+    font-family: inherit;
+    color: inherit;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 11px;
 }
 
 .c-input:focus {
+    outline: none;
+    border-color: #3385FF;
+    box-shadow: 0 0 0 3px #3385ff4d;
 }
 
 /*
@@ -464,7 +564,15 @@ a:focus {
 */
 
 .c-label {
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 8px;
+    color: #606274;
+}
 
+.c-label--option {
+    margin-bottom: 0px;
+    margin-left: 8px;
 }
 
 /* If a input is focused within the form-field class change te color of the label */
@@ -480,19 +588,34 @@ a:focus {
 */
 
 .c-button {
-
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 20px;
+    width: 100%;
+    border-color: #2E77E6;
+    background-color: #3385ff;
+    border-width: 1px;
+    border-radius: 3px;
+    color: white;
+    padding: 13px 12px;
+    outline: none;
 }
 
 .c-button:hover {
-
+    background-color: #4F95FF;
 }
 
 .c-button:focus {
-
+    outline: none;
+    border: 3px solid #3385FF80;
+    padding: 11px;
+    box-shadow: 0 0 2px 1px #3385FFFD;
+    background-color: #3385FF;
 }
 
 .c-button:active {
-
+    background-color: #2e77e6;
 }
 
 .c-button--block {
@@ -510,7 +633,7 @@ a:focus {
 */
 
 .u-color-neutral-base {
-    color: Silver;
+    color: #757787;
 }
 
 .u-color-neutral-dark {
